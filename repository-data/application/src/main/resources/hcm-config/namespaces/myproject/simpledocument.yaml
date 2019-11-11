@@ -1,0 +1,37 @@
+definitions:
+  config:
+    /hippo:namespaces/myproject/simpledocument:
+      jcr:primaryType: hipposysedit:templatetype
+      jcr:mixinTypes: ['editor:editable', 'mix:referenceable']
+      jcr:uuid: d4984103-5d06-4a79-b5ce-8e42838b734f
+      /hipposysedit:nodetype:
+        jcr:primaryType: hippo:handle
+        jcr:mixinTypes: ['mix:referenceable']
+        jcr:uuid: 228b70aa-35bf-4fe9-9863-37bd7a4ed020
+        /hipposysedit:nodetype:
+          jcr:primaryType: hipposysedit:nodetype
+          jcr:mixinTypes: ['hipposysedit:remodel']
+          hipposysedit:supertype: ['hippo:document', 'hippostdpubwf:document', 'hippostd:publishableSummary']
+          hipposysedit:uri: http://www.myproject.com/myproject/nt/1.0
+      /editor:templates:
+        jcr:primaryType: editor:templateset
+        /_default_:
+          jcr:primaryType: frontend:plugincluster
+          frontend:properties: [mode]
+          frontend:references: [wicket.model, model.compareTo, engine]
+          frontend:services: [wicket.id]
+          /root:
+            jcr:primaryType: frontend:plugin
+            item: ${cluster.id}.field
+            plugin.class: org.hippoecm.frontend.service.render.ListViewPlugin
+      /hipposysedit:prototypes:
+        jcr:primaryType: hipposysedit:prototypeset
+        /hipposysedit:prototype:
+          jcr:primaryType: myproject:simpledocument
+          jcr:mixinTypes: ['mix:referenceable']
+          jcr:uuid: e6f5f172-fe88-4e93-a490-1f42ce73b5c0
+          hippostd:state: draft
+          hippostdpubwf:createdBy: ''
+          hippostdpubwf:creationDate: 2019-11-06T09:03:49.765+08:00
+          hippostdpubwf:lastModificationDate: 2019-11-06T09:03:49.763+08:00
+          hippostdpubwf:lastModifiedBy: ''

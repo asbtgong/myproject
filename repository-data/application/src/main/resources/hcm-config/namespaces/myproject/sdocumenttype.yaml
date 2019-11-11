@@ -1,0 +1,92 @@
+definitions:
+  config:
+    /hippo:namespaces/myproject/sdocumenttype:
+      jcr:primaryType: hipposysedit:templatetype
+      jcr:mixinTypes: ['editor:editable', 'mix:referenceable']
+      jcr:uuid: 84f0b665-a7ae-4f2c-b936-55f5fa3e6d4f
+      /hipposysedit:nodetype:
+        jcr:primaryType: hippo:handle
+        jcr:mixinTypes: ['mix:referenceable']
+        jcr:uuid: 489db312-bf2f-4dad-8438-ffc2746a28fa
+        /hipposysedit:nodetype:
+          jcr:primaryType: hipposysedit:nodetype
+          jcr:mixinTypes: ['hipposysedit:remodel', 'mix:referenceable']
+          jcr:uuid: 5f939f4d-0ea7-4a3a-b46f-59f3a5e2e819
+          hipposysedit:node: true
+          hipposysedit:supertype: ['myproject:basedocument', 'hippostd:relaxed', 'hippotranslation:translated']
+          hipposysedit:uri: http://www.myproject.com/myproject/nt/1.0
+          /title:
+            jcr:primaryType: hipposysedit:field
+            hipposysedit:mandatory: false
+            hipposysedit:multiple: false
+            hipposysedit:ordered: false
+            hipposysedit:path: myproject:title
+            hipposysedit:primary: false
+            hipposysedit:type: String
+          /content:
+            jcr:primaryType: hipposysedit:field
+            hipposysedit:mandatory: false
+            hipposysedit:multiple: false
+            hipposysedit:ordered: false
+            hipposysedit:path: myproject:content
+            hipposysedit:primary: false
+            hipposysedit:type: hippostd:html
+      /hipposysedit:prototypes:
+        jcr:primaryType: hipposysedit:prototypeset
+        /hipposysedit:prototype:
+          jcr:primaryType: myproject:sdocumenttype
+          jcr:mixinTypes: ['mix:referenceable']
+          jcr:uuid: 5e79f7fa-3e58-43a1-a92d-3d1fec69e1a6
+          hippostd:holder: holder
+          hippostd:state: draft
+          hippostdpubwf:createdBy: ''
+          hippostdpubwf:creationDate: 2019-11-06T09:39:08.866+08:00
+          hippostdpubwf:lastModificationDate: 2019-11-06T09:39:08.865+08:00
+          hippostdpubwf:lastModifiedBy: ''
+          hippotranslation:id: document-type-locale-id
+          hippotranslation:locale: document-type-locale
+          myproject:title: ''
+          /myproject:content:
+            jcr:primaryType: hippostd:html
+            hippostd:content: ''
+      /editor:templates:
+        jcr:primaryType: editor:templateset
+        /_default_:
+          jcr:primaryType: frontend:plugincluster
+          frontend:properties: [mode]
+          frontend:references: [wicket.model, model.compareTo, engine, validator.id]
+          frontend:services: [wicket.id, validator.id]
+          /root:
+            jcr:primaryType: frontend:plugin
+            extension.left: ${cluster.id}.left
+            extension.right: ${cluster.id}.right
+            plugin.class: org.hippoecm.frontend.editor.layout.TwoColumn
+            wicket.extensions: [extension.left, extension.right]
+          /left:
+            jcr:primaryType: frontend:plugin
+            item: ${cluster.id}.left.item
+            plugin.class: org.hippoecm.frontend.service.render.ListViewPlugin
+            wicket.id: ${cluster.id}.left
+          /right:
+            jcr:primaryType: frontend:plugin
+            item: ${cluster.id}.right.item
+            plugin.class: org.hippoecm.frontend.service.render.ListViewPlugin
+            wicket.id: ${cluster.id}.right
+          /title:
+            jcr:primaryType: frontend:plugin
+            caption: Title
+            field: title
+            hint: ''
+            plugin.class: org.hippoecm.frontend.editor.plugins.field.PropertyFieldPlugin
+            wicket.id: ${cluster.id}.left.item
+            /cluster.options:
+              jcr:primaryType: frontend:pluginconfig
+          /content:
+            jcr:primaryType: frontend:plugin
+            caption: Content
+            field: content
+            hint: ''
+            plugin.class: org.hippoecm.frontend.editor.plugins.field.NodeFieldPlugin
+            wicket.id: ${cluster.id}.left.item
+            /cluster.options:
+              jcr:primaryType: frontend:pluginconfig

@@ -1,0 +1,55 @@
+/content/documents/myproject/hello-world:
+  jcr:primaryType: hippo:handle
+  jcr:mixinTypes: ['hippo:named', 'hippo:versionInfo', 'mix:referenceable']
+  jcr:uuid: 84c2a23c-5c30-49f7-91cf-e16992c4ac2f
+  hippo:name: Hello world
+  hippo:versionHistory: e5f4a31d-2b9c-4152-be11-8967d2009dad
+  /hello-world[1]:
+    jcr:primaryType: myproject:sdocumenttype
+    jcr:mixinTypes: ['mix:referenceable']
+    jcr:uuid: b63a66a1-edcb-4c44-8c40-c2578f9d6646
+    hippo:availability: []
+    hippostd:state: draft
+    hippostdpubwf:createdBy: admin
+    hippostdpubwf:creationDate: 2019-11-06T09:55:48.990+08:00
+    hippostdpubwf:lastModificationDate: 2019-11-06T09:55:48.991+08:00
+    hippostdpubwf:lastModifiedBy: admin
+    hippotranslation:id: 61fea556-6a47-44a7-8fb9-550d45d40632
+    hippotranslation:locale: en
+    myproject:title: ''
+    /myproject:content:
+      jcr:primaryType: hippostd:html
+      hippostd:content: ''
+  /hello-world[2]:
+    jcr:primaryType: myproject:sdocumenttype
+    jcr:mixinTypes: ['mix:referenceable', 'mix:versionable']
+    jcr:uuid: eb51b8c2-3384-4ca5-83d6-d5d155f8901e
+    hippo:availability: [preview]
+    hippostd:state: unpublished
+    hippostdpubwf:createdBy: admin
+    hippostdpubwf:creationDate: 2019-11-06T09:55:48.990+08:00
+    hippostdpubwf:lastModificationDate: 2019-11-06T09:56:39.540+08:00
+    hippostdpubwf:lastModifiedBy: admin
+    hippotranslation:id: 61fea556-6a47-44a7-8fb9-550d45d40632
+    hippotranslation:locale: en
+    myproject:title: ''
+    /myproject:content:
+      jcr:primaryType: hippostd:html
+      hippostd:content: ''
+  /hello-world[3]:
+    jcr:primaryType: myproject:sdocumenttype
+    jcr:mixinTypes: ['mix:referenceable']
+    jcr:uuid: 38b819cd-93e5-4056-9507-7d1cf6d5d236
+    hippo:availability: [live]
+    hippostd:state: published
+    hippostdpubwf:createdBy: admin
+    hippostdpubwf:creationDate: 2019-11-06T09:55:48.990+08:00
+    hippostdpubwf:lastModificationDate: 2019-11-06T09:56:39.540+08:00
+    hippostdpubwf:lastModifiedBy: admin
+    hippostdpubwf:publicationDate: 2019-11-06T09:56:49.133+08:00
+    hippotranslation:id: 61fea556-6a47-44a7-8fb9-550d45d40632
+    hippotranslation:locale: en
+    myproject:title: ''
+    /myproject:content:
+      jcr:primaryType: hippostd:html
+      hippostd:content: ''
