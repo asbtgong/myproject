@@ -10,6 +10,7 @@
   <body>
     <h1>Server error</h1>
     <h1>Server error</h1>
+    <h1>Server error</h1>
     <% out.println("<!-- An unexcepted error occurred. The name of the exception is:"); %>
     <%= exception %>
     <% out.println("-->"); %>
